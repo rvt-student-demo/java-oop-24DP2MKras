@@ -4,6 +4,9 @@ import java.util.*;
 public class Warehouse {
     HashMap<String, Integer> Map = new HashMap<>();
     HashMap<String, Integer> Stock = new HashMap<>();
+    public String product;
+    public int price;
+    public int stock;
     
     public void addProduct(String product, int price, int stock){
         Map.put(product, price);
@@ -29,23 +32,22 @@ public class Warehouse {
     }
 
     public Set<String> products() {
-        
+        return Map.keySet();
     }
 
     public static void main(String[] args) {
-        Warehouse warehouse = new Warehouse();
-warehouse.addProduct("coffee", 5, 1);
+        
+    Warehouse warehouse = new Warehouse();
+    warehouse.addProduct("milk", 3, 10);
+    warehouse.addProduct("coffee", 5, 6);
+    warehouse.addProduct("buttermilk", 2, 20);
+    warehouse.addProduct("yogurt", 2, 20);
 
-System.out.println("stock:");
-System.out.println("coffee:  " + warehouse.stock("coffee"));
-System.out.println("sugar: " + warehouse.stock("sugar"));
+    System.out.println("products:");
 
-System.out.println("taking coffee " + warehouse.take("coffee"));
-System.out.println("taking coffee " + warehouse.take("coffee"));
-System.out.println("taking sugar " + warehouse.take("sugar"));
+for (String product: warehouse.products()) {
+    System.out.println(product);
+    }
 
-System.out.println("stock:");
-System.out.println("coffee:  " + warehouse.stock("coffee"));
-System.out.println("sugar: " + warehouse.stock("sugar"));
     }
 }
