@@ -12,17 +12,15 @@ public class TablePrinter {
             }
         }
 
-        printSeperator(widths);
 
         for(String[] row : data) {
-            System.out.println("|");
+            
             for(int i = 0; i < row.length; i++) {
-                System.out.println(" " + String.format("%-" + widths[i] + "s", row[i] + " |"));
+                System.out.print("|" + String.format("%-" + widths[i] + "s", row[i]));
             }
+            System.out.print("|");
+            System.out.println();
         }
-    }
-    private static void printSeperator(int[] widths){
-    
     }
 }
 
