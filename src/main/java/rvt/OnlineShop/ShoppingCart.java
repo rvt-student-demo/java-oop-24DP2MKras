@@ -4,7 +4,7 @@ public class ShoppingCart {
     public String product;
     public int price;
     public int TotalPrice;
-    Map<String, Item> Shop = new HashMap<>();
+    HashMap<String, Item> Shop = new HashMap<>();
     public void add(String product, int price) {
         if(Shop.containsKey(product)) {
             Shop.get(product).increaseQuantity();
